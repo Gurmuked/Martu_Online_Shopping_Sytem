@@ -1,0 +1,275 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 8%;
+}
+.image-gallery {
+    width: 40%;
+    padding: 20px;
+    margin: 0 auto;
+    border-right: 1px solid #e0e0e0;
+    text-align: center;
+}
+.image-gallery img {
+    max-width: 70%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.product-details {
+    width: 60%;
+    padding: 20px;
+}
+.product-details h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+.product-details .price {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+.product-details .rating {
+    color: #f4c150;
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+.product-details p {
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #555;
+}
+.options {
+    margin-bottom: 20px;
+}
+.options label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+
+
+.quantity {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin: 5% auto;
+
+}
+#quantity1{
+    margin-right: 10%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: transparent;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fd6017;
+
+}
+.quantity button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #fd6017;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 2%;
+}
+.quantity input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+.quantity #quantity{
+    width: 30px;
+    height: 30px;
+}
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+.buttons button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+.buttons .buy-now {
+    background: #fd6017;
+    color: white;
+    font-weight: 600;
+    transition: 0.5s ;
+}
+.buttons .buy-now:hover{
+    background: transparent;
+    color: #fd6017;
+    border: 1px #fd6017 solid;
+}
+.buttons .wishlist {
+    background-color: #ccc;
+    color: black;
+}
+.delivery-info {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.product-description{
+    padding: 10px;
+    margin: 5px;
+    font-weight: 600;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    margin: 1% auto;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.overlay.active {
+    display: flex;
+}
+
+.form-container {
+    background: linear-gradient(135deg, #ffffff, #f7f7f7);
+    padding: 30px 20px;
+    border-radius: 15px;
+    width:50%;
+    margin:5% auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: slideIn 0.4s ease-in-out;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-container form input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: 0.5s ease;
+
+}
+.form-container form input:hover{
+    background: #dcdada;
+}
+.form-container form input:focus {
+    border-color: #fd6017;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-container form button {
+    padding: 12px 20px;
+    background: #fd6017;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.form-container form button:hover {
+    background: transparent;
+    color: #fd6017;
+    border: 1px #fd6017 solid;
+
+}
+
+.product-description span {
+    color: tomato;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+@media (width <= 700px) {
+    .container{
+        display:block ;
+        width: 100%;
+        margin-top: 12%;
+    }
+    .image-gallery{
+        width: 80%;
+    }
+    .image-gallery img{
+        width: 50%;
+    }
+    .product-details {
+        text-align: center;
+    }
+    .product-description{
+        width: 80%;
+    }
+    .product-details{
+        width: 90%;
+    }
+    .options{
+        margin-left: 20%;
+        width: 90%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    }
+    .options .size-options{
+        width: 90%;
+    }
+    .buttons{
+        text-align: center;
+        margin-left: 30%;
+        width: 90%;
+    }
+    .quantity{
+        margin-left: 30%;
+        width: 90%;
+    }
+    .product-description span{
+        text-align: center;
+        font-size: 15px;
+    }
+}
+
+
+
