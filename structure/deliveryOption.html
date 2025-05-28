@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+    
+            justify-content: space-between;
+            padding: 20px;
+            max-width: 60%;
+            margin: auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .order-details {
+            width: 90%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+        }
+        .order-details h2 {
+            color: green;
+        }
+        .product {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .product img {
+            width: 50px;
+            margin-right: 10px;
+        }
+        .price {
+            color: red;
+            font-weight: bold;
+        }
+        .delivery-options {
+            width: 48%;
+        }
+        .order-summary {
+            width: 48%;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .order-summary h3 {
+            color: red;
+        }
+        .place-order {
+            background-color: yellow;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+ 
+    <div class="container">
+      <h2>Delivery date: Tuesday, June 21</h2>
+        <div class="order-details">
+            <div class="product">
+                <img src="../photos/applephone.jpg" alt="Socks">
+                <div>
+                    <p>Black and Gray Athletic Cotton Socks - 6 Pairs</p>
+                    <p class="price">$10.90</p>
+                    <p>Quantity: 2 <a href="#">Update</a> <a href="#">Delete</a></p>
+                </div>
+            </div>
+            <div class="delivery-options">
+                  <h3>Choose a delivery option:</h3>
+                    <label><input type="radio" name="delivery" checked> <strong>Tuesday, June 21</strong> - FREE Shipping</label><br>
+                    <label><input type="radio" name="delivery"> Wednesday, June 15 - $4.99 Shipping</label><br>
+                    <label><input type="radio" name="delivery"> Monday, June 13 - $9.99 Shipping</label>
+            </div>
+          </div>
+      </div>
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <p>Items (3): <strong>$42.75</strong></p>
+            <p>Shipping & handling: <strong>$4.99</strong></p>
+            <p>Total before tax: <strong>$47.74</strong></p>
+            <p>Estimated tax (10%): <strong>$4.77</strong></p>
+            <h3>Order total: <strong>$52.51</strong></h3>
+            <div class="place-order">Place your order</div>
+        </div>
+
+</body>
+</html>
