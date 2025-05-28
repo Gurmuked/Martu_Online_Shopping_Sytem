@@ -1,0 +1,140 @@
+body{
+  background-color: rgb(248, 248, 248);
+}
+.order-page-topic{
+  font-size: 40px;
+  font-weight:700 ;
+  color: orangered;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.order-caontainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.order-summary{
+  width: 60%;
+}
+.cart-item-container{
+  width:95%;
+  margin: 8px 10px;
+  padding: 6px 10px;
+  font-size: 22px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(228, 225, 225);
+  border-radius: 4px;
+  color: rgb(42, 199, 11);
+}
+.cart-item-detail-grid{
+display: grid;
+grid-template-columns: 0.2fr 1fr;
+text-align: start;
+
+}
+.cart-item-details{
+  padding-left: 4px;
+  padding-top: 10px;
+  line-height: 1.5;
+  font-size: 20px;
+  color: black;
+}
+.cart-item-container img{
+  padding-top: 10px;
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+}
+.update-quantity-link, .delete-quantity-link{
+  color: #007bff;
+  cursor: pointer;
+}
+.place-order{
+  width: 40%;
+  height: 50vh;
+  background-color: green;
+}
+.container{
+  position:relative ;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 1% auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.overlay.active {
+  display: flex;
+}
+
+.form-container {
+  background: linear-gradient(135deg, #ffffff, #f7f7f7);
+  padding: 30px 20px;
+  border-radius: 15px;
+  width:50%;
+  margin:5% auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: slideIn 0.4s ease-in-out;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-container form input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: 0.5s ease;
+
+}
+.form-container form input:hover{
+  background: #dcdada;
+}
+.form-container form input:focus {
+  border-color: #fd6017;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-container form button {
+  padding: 12px 20px;
+  background: #fd6017;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.form-container form button:hover {
+  background: transparent;
+  color: #fd6017;
+  border: 1px #fd6017 solid;
+
+}
+
