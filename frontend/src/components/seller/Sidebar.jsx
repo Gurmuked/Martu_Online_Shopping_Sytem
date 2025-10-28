@@ -46,7 +46,7 @@ const SellerSidebar = () => {
           ))}
         </ul>
 
-      <button className="flex items-center gap-3 text-red-600 mt-auto px-3 py-2 rounded-md hover:bg-red-50">
+      <button className="flex items-center gap-3 text-red-600 mt-auto px-3 py-2 rounded-md hover:text-red-700 hover:bg-red-50">
         <LogOut size={18} /> Logout
       </button>
     </aside>

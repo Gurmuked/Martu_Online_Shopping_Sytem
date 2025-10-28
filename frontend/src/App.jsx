@@ -19,9 +19,9 @@ function App() {
       <BeneficiariesSection />
       <HowItWorkSection />
       <CTASection />
+      <FooterSection />
       <BuyerDashboard />
       <SellerDashboard />
-      <FooterSection />
       
     </div>
   );

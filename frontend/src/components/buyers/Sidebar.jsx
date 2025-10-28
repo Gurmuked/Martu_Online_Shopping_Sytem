@@ -15,8 +15,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="w-64 bg-white shadow-lg h-screen p-5 flex flex-col justify-between">
-      <div>
+    <aside className="w-72 bg-white border-r border-gray-200 min-h-screen p-5 flex flex-col">
         <div className="mb-6 flex items-center gap-3">
           <div className="w-10 h-10 rounded-lg bg-green-700 flex items-center justify-center text-white font-bold">
             AG
@@ -37,8 +36,8 @@ const Sidebar = () => {
             </li>
           ))}
         </ul>
-      </div>
-      <button className="flex items-center gap-2 text-red-600 font-medium hover:text-red-700">
+
+      <button className="flex items-center gap-3 text-red-600 mt-auto px-3 py-2 rounded-md hover:text-red-700 hover:bg-red-50">
         <IoIosLogOut size={18} /> Logout
       </button>
     </aside>
