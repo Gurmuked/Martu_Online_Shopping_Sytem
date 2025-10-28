@@ -30,7 +30,7 @@ const ChallengeSection = () => {
         {challenges.map((item, i) => (
           <div
             key={i}
-            className="bg-green-50 p-3 rounded-xl shadow hover:shadow-md transition"
+            className="bg-green-50 py-8 px-2 rounded-xl shadow hover:shadow-md transition"
           >
             <h3 className="font-semibold text-green-900 text-lg mb-6">
               {item.title}

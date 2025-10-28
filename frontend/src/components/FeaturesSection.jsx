@@ -43,7 +43,7 @@ const FeaturesSection = () => {
             <h3 className="font-semibold text-green-900 text-lg mb-4">
               {feature.title}
             </h3>
-            <ul className="text-gray-700 text-sm list-disc list-inside space-y-1 text-left">
+            <ul className="text-gray-700 text-[14px] list-disc list-inside space-y-1 text-left">
               {feature.points.map((p, idx) => (
                 <li key={idx}>{p}</li>
               ))}

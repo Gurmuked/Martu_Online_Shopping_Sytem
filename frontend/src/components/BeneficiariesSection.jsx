@@ -32,10 +32,10 @@ const BeneficiariesSection = () => {
         {users.map((user, i) => (
           <div key={i} className="rounded-xl shadow-lg overflow-hidden bg-green-50">
             <img src={user.img} alt={user.title} className="w-full h-36 object-cover" />
-            <div className="py-4 px-2  text-left">
+            <div className="py-[12px] px-4  text-left">
               <h3 className="font-semibold text-lg text-green-900 mb-2">{user.title}</h3>
               <p className="text-gray-700 text-[12px] mb-2">{user.desc}</p>
-              <p className="font-semibold text-green-800 text-[14px]">{user.stat}</p>
+              <p className="font-semibold text-green-800 text-[12px]">{user.stat}</p>
             </div>
           </div>
         ))}
