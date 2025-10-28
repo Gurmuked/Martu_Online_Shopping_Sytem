@@ -19,7 +19,7 @@ const ChallengeSection = () => {
   ];
 
   return (
-    <section id="challenges" className="py-16 px-6 md:px-20 bg-white text-center">
+    <section id="challenges" className="py-4 px-6 mt-6 md:px-20 bg-white text-center">
       <h2 className="text-3xl font-bold mb-4 text-gray-900">
         The Challenge We're Solving
       </h2>
@@ -30,9 +30,9 @@ const ChallengeSection = () => {
         {challenges.map((item, i) => (
           <div
             key={i}
-            className="bg-green-50 p-6 rounded-xl shadow hover:shadow-md transition"
+            className="bg-green-50 p-3 rounded-xl shadow hover:shadow-md transition"
           >
-            <h3 className="font-semibold text-green-900 text-lg mb-4">
+            <h3 className="font-semibold text-green-900 text-lg mb-6">
               {item.title}
             </h3>
             <p className="text-gray-700 text-[14px]">{item.desc}</p>
