@@ -4,6 +4,7 @@ import BuyerDashboard from "./pages/BuyerDashboard";
 import SellerDashboard from "./pages/SellerDashboard";
 import Homepage from "./components/Homepage";
 import LoginRegister from "./components/LoginAndSignup";
+import SystemFeature from "./pages/SystemFeature";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/home" element={<Homepage />} />
         <Route path="/loginregister" element={<LoginRegister />} />
+        <Route path="/features" element={<SystemFeature />} />
         <Route path="/buyer-dashboard" element={<BuyerDashboard />} />
         <Route path="/seller-dashboard" element={<SellerDashboard />} />
       </Routes>

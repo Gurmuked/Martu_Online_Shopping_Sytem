@@ -1,4 +1,7 @@
 import CTASection from './CTASection';
+import { motion } from 'framer-motion';
+
+
 const HowItWorksSection = () => {
   const steps = [
     {
@@ -32,7 +35,12 @@ const HowItWorksSection = () => {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         {steps.map((step) => (
-          <div
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
             key={step.number}
             className="bg-white py-8 px-2 rounded-xl shadow hover:shadow-lg transition"
           >
@@ -41,7 +49,8 @@ const HowItWorksSection = () => {
             </div>
             <h3 className="font-semibold text-green-900 mb-2">{step.title}</h3>
             <p className="text-gray-700 text-[12px]">{step.desc}</p>
-          </div>
+
+         </motion.div>
         ))}
       </div>
     </section>

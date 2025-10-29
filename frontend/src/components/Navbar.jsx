@@ -12,7 +12,7 @@ const Navbar = () => {
       <ul className="hidden md:flex space-x-4 text-gray-700 font-medium">
         <li><Link to="/home" className="hover:text-green-700">Home</Link></li>
         <li><Link to="/marketplace" className="hover:text-green-700">Marketplace</Link></li>
-        <li><Link to="/howitworks" className="hover:text-green-700">How It Works</Link></li>
+        <li><Link to="/features" className="hover:text-green-700">Feature</Link></li>
         <li><Link to="/about" className="hover:text-green-700">About</Link></li>
       </ul>
 

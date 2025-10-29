@@ -1,4 +1,6 @@
 import HowItWorksSection from './HowItWorkSection';
+import { motion } from 'framer-motion';
+
 
 const BeneficiariesSection = () => {
   const users = [
@@ -33,14 +35,22 @@ const BeneficiariesSection = () => {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {users.map((user, i) => (
-          <div key={i} className="rounded-xl shadow-lg overflow-hidden bg-green-50">
-            <img src={user.img} alt={user.title} className="w-full h-36 object-cover" />
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          key={i} 
+          className="rounded-xl shadow-lg overflow-hidden bg-green-50"
+        >
+           <img src={user.img} alt={user.title} className="w-full h-36 object-cover" />
             <div className="py-[12px] px-4  text-left">
               <h3 className="font-semibold text-lg text-green-900 mb-2">{user.title}</h3>
               <p className="text-gray-700 text-[12px] mb-2">{user.desc}</p>
               <p className="font-semibold text-green-800 text-[12px]">{user.stat}</p>
             </div>
-          </div>
+        </motion.div>
         ))}
       </div>
     </section>

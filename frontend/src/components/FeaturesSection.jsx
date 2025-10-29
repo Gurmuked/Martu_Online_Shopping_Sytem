@@ -1,4 +1,5 @@
 import BeneficiariesSection from './BeneficiariesSection';
+import { motion } from 'framer-motion';
 
 const FeaturesSection = () => {
   const features = [
@@ -39,7 +40,12 @@ const FeaturesSection = () => {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {features.map((feature, i) => (
-          <div
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
             key={i}
             className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
           >
@@ -51,7 +57,8 @@ const FeaturesSection = () => {
                 <li key={idx}>{p}</li>
               ))}
             </ul>
-          </div>
+         </motion.div>
+
         ))}
       </div>
     </section>

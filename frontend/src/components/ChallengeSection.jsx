@@ -1,4 +1,5 @@
 import FeaturesSection from './FeaturesSection';
+import { motion } from 'framer-motion';
 
 const ChallengeSection = () => {
   const challenges = [
@@ -31,15 +32,20 @@ const ChallengeSection = () => {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         {challenges.map((item, i) => (
-          <div
-            key={i}
-            className="bg-green-50 py-8 px-2 rounded-xl shadow hover:shadow-md transition"
-          >
-            <h3 className="font-semibold text-green-900 text-lg mb-6">
-              {item.title}
-            </h3>
-            <p className="text-gray-700 text-[14px]">{item.desc}</p>
-          </div>
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          key={i}
+          className="bg-green-50 py-8 px-2 rounded-xl shadow hover:shadow-md transition"
+        >
+          <h3 className="font-semibold text-green-900 text-lg mb-6">
+            {item.title}
+          </h3>
+          <p className="text-gray-700 text-[14px]">{item.desc}</p>
+        </motion.div>
         ))}
       </div>
     </section>
