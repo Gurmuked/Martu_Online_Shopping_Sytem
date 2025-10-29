@@ -1,29 +1,21 @@
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import ChallengeSection from "./components/ChallengeSection";
-import FeaturesSection from "./components/FeaturesSection";
-import BeneficiariesSection from "./components/BeneficiariesSection";
-import HowItWorkSection from "./components/HowItWorkSection";
-import CTASection from "./components/CTASection";
-import FooterSection from "./components/FooterSection";
 import BuyerDashboard from "./pages/BuyerDashboard";
 import SellerDashboard from "./pages/SellerDashboard";
+import Homepage from "./components/Homepage";
+import LoginRegister from "./components/LoginAndSignup";
 
 function App() {
   return (
-    <div className="font-sans text-gray-800">
+    <BrowserRouter>
       <Navbar />
-      <HeroSection />
-      <ChallengeSection />
-      <FeaturesSection />
-      <BeneficiariesSection />
-      <HowItWorkSection />
-      <CTASection />
-      <FooterSection />
-      <BuyerDashboard />
-      <SellerDashboard />
-      
-    </div>
+      <Routes>
+        <Route path="/home" element={<Homepage />} />
+        <Route path="/loginregister" element={<LoginRegister />} />
+        <Route path="/buyer-dashboard" element={<BuyerDashboard />} />
+        <Route path="/seller-dashboard" element={<SellerDashboard />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

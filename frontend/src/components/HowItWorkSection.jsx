@@ -1,3 +1,4 @@
+import CTASection from './CTASection';
 const HowItWorksSection = () => {
   const steps = [
     {
@@ -23,6 +24,7 @@ const HowItWorksSection = () => {
   ];
 
   return (
+    <>
     <section id="how" className="py-4 px-6 mt-6 md:px-20 bg-green-50 text-center">
       <h2 className="text-3xl font-bold mb-4 text-gray-900">How AgroLink Works</h2>
       <p className="text-gray-600 mb-10 max-w-2xl text-[14px] mx-auto">
@@ -43,6 +45,8 @@ const HowItWorksSection = () => {
         ))}
       </div>
     </section>
+    <CTASection />
+    </>
   );
 };
 

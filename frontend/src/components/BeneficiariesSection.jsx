@@ -1,3 +1,5 @@
+import HowItWorksSection from './HowItWorkSection';
+
 const BeneficiariesSection = () => {
   const users = [
     {
@@ -21,6 +23,7 @@ const BeneficiariesSection = () => {
   ];
 
   return (
+    <>
     <section id="beneficiaries" className="py-4 px-6 mt-6 md:px-20 bg-white text-center">
       <h2 className="text-3xl font-bold mb-4 text-gray-900">
         Who Benefits from AgroLink
@@ -41,6 +44,8 @@ const BeneficiariesSection = () => {
         ))}
       </div>
     </section>
+    <HowItWorksSection />
+    </>
   );
 };
 

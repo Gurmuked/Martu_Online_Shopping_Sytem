@@ -1,3 +1,5 @@
+import FeaturesSection from './FeaturesSection';
+
 const ChallengeSection = () => {
   const challenges = [
     {
@@ -19,6 +21,7 @@ const ChallengeSection = () => {
   ];
 
   return (
+    <>
     <section id="challenges" className="py-4 px-6 mt-6 md:px-20 bg-white text-center">
       <h2 className="text-3xl font-bold mb-4 text-gray-900">
         The Challenge We're Solving
@@ -40,6 +43,8 @@ const ChallengeSection = () => {
         ))}
       </div>
     </section>
+    <FeaturesSection />
+    </>
   );
 };
 

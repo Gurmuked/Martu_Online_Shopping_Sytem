@@ -1,3 +1,5 @@
+import BeneficiariesSection from './BeneficiariesSection';
+
 const FeaturesSection = () => {
   const features = [
     {
@@ -27,6 +29,7 @@ const FeaturesSection = () => {
   ];
 
   return (
+    <>
     <section id="features" className="py-4 px-6 mt-6 md:px-20 bg-green-50 text-center">
       <h2 className="text-3xl font-bold mb-4 text-gray-900">
         Powerful Features for Safe Trading
@@ -52,6 +55,8 @@ const FeaturesSection = () => {
         ))}
       </div>
     </section>
+    <BeneficiariesSection />
+    </>
   );
 };
 
