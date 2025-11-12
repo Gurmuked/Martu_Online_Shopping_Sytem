@@ -10,10 +10,10 @@ const Navbar = () => {
       </div>
 
       <ul className="hidden md:flex space-x-4 text-gray-700 font-medium">
-        <li><Link to="/home" className="hover:text-green-700">Home</Link></li>
-        <li><Link to="/marketplace" className="hover:text-green-700">Marketplace</Link></li>
-        <li><Link to="/features" className="hover:text-green-700">Feature</Link></li>
-        <li><Link to="/about" className="hover:text-green-700">About</Link></li>
+        <li><Link to="/home" className="hover:text-green-700 active:text-green-900">Home</Link></li>
+        <li><Link to="/services" className="hover:text-green-700 active:text-green-900">Services</Link></li>
+        <li><Link to="/features" className="hover:text-green-700 active:text-green-900">Feature</Link></li>
+        <li><Link to="/about" className="hover:text-green-700 active:text-green-900">About</Link></li>
       </ul>
 
       <div className="space-x-2">

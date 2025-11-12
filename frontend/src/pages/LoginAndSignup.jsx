@@ -15,7 +15,7 @@ const LoginRegister = () => {
     >
       <div
         className={`relative flex items-center w-[420px] text-white border border-gray-400 shadow-md backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-200 ease-in-out ${
-          action === "active" ? "h-[350px]" : "h-[350px]"
+          action === "active" ? "h-[480px]" : "h-[480px]"
         }`}
       >
         {/* LOGIN FORM */}
@@ -131,11 +131,13 @@ const LoginRegister = () => {
               <FaLock className="absolute right-5 top-1/2 -translate-y-1/2 text-lg" />
             </div>
 
-              <Selection className="relative w-full h-[50px] mb-2">
+            <div className="relative w-full h-[50px] mb-2">
+              <select className="w-full h-full bg-transparent outline-none border-2 border-white/20 rounded-full px-5 pr-11  placeholder-white text-base">
                 <option value="Framer">Framer</option>
-                <option value="Trader">Trader</option>
-              </Selection>
-            
+                <option value="Trader" >Trader</option>
+              </select>
+            </div>
+
 
             <div className="flex justify-between text-sm mb-2">
               <label className="flex items-center gap-1">
