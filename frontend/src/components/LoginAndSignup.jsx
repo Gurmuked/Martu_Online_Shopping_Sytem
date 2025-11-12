@@ -121,6 +121,22 @@ const LoginRegister = () => {
               <FaLock className="absolute right-5 top-1/2 -translate-y-1/2 text-lg" />
             </div>
 
+            <div className="relative w-full h-[50px] mb-2">
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                required
+                className="w-full h-full bg-transparent outline-none border-2 border-white/20 rounded-full px-5 pr-11 text-white placeholder-white text-base"
+              />
+              <FaLock className="absolute right-5 top-1/2 -translate-y-1/2 text-lg" />
+            </div>
+
+              <Selection className="relative w-full h-[50px] mb-2">
+                <option value="Framer">Framer</option>
+                <option value="Trader">Trader</option>
+              </Selection>
+            
+
             <div className="flex justify-between text-sm mb-2">
               <label className="flex items-center gap-1">
                 <input type="checkbox" className="accent-white" /> Agree Terms &
