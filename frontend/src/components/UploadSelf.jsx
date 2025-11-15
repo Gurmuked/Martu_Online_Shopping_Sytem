@@ -32,6 +32,30 @@ export default function SelfieCapture() {
     <div className="min-h-screen bg-gray-50 flex justify-center p-6">
       <div className="w-full max-w-2xl bg-white shadow-md rounded-xl p-8">
 
+                {/* Top Step Indicator */}
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 flex items-center justify-center rounded-full bg-blue-600 text-white font-semibold">
+              3
+            </div>
+            <span className="text-gray-700 font-medium">Selfie</span>
+          </div>
+
+          <div className="text-sm text-gray-500">Step 3 of 3</div>
+        </div>
+        
+                {/* Progress header */}
+        <div className="mb-6">
+          <div className="flex justify-between text-sm text-gray-600 mb-1">
+            <span>Step 3 of 3</span>
+            <span>100% Complete</span>
+          </div>
+          <div className="w-full bg-gray-200 h-2 rounded-full">
+            <div className="bg-blue-600 h-2 rounded-full" style={{ width: "100%" }}></div>
+          </div>
+        </div>
+
+
         {/* Header */}
         <h2 className="text-2xl font-semibold text-gray-900 mb-2 text-center">
           Take a Selfie
@@ -132,7 +156,7 @@ export default function SelfieCapture() {
             className={`px-6 py-2 rounded-lg text-white 
               ${continueEnabled ? "bg-blue-600 hover:bg-blue-700" : "bg-gray-300 cursor-not-allowed"}`}
           >
-            Continue
+            Complete
           </button>
         </div>
       </div>

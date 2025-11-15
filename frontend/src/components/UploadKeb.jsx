@@ -23,6 +23,18 @@ export default function AdditionalDocumentUpload() {
     <div className="min-h-screen bg-gray-50 flex justify-center p-6">
       <div className="w-full max-w-3xl bg-white shadow-lg rounded-xl p-8">
 
+        {/* Top Step Indicator */}
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 flex items-center justify-center rounded-full bg-blue-600 text-white font-semibold">
+              2
+            </div>
+            <span className="text-gray-700 font-medium">Kebele ID</span>
+          </div>
+
+          <div className="text-sm text-gray-500">Step 2 of 3</div>
+        </div>
+
         {/* Progress header */}
         <div className="mb-6">
           <div className="flex justify-between text-sm text-gray-600 mb-1">

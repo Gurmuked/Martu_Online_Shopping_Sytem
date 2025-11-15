@@ -24,6 +24,18 @@ export default function NationalIDUpload() {
           <div className="text-sm text-gray-500">Step 1 of 3</div>
         </div>
 
+                {/* Progress header */}
+        <div className="mb-6">
+          <div className="flex justify-between text-sm text-gray-600 mb-1">
+            <span>Step 1 of 3</span>
+            <span>33% Complete</span>
+          </div>
+          <div className="w-full bg-gray-200 h-2 rounded-full">
+            <div className="bg-blue-600 h-2 rounded-full" style={{ width: "33%" }}></div>
+          </div>
+        </div>
+
+
         {/* Title */}
         <h2 className="text-xl font-semibold text-gray-900 mb-2 text-center">
           Upload Your National ID
