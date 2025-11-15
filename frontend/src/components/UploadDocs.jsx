@@ -1,24 +1,87 @@
-import axios from 'axios';
-import { useState } from 'react';
+import { useState } from "react";
+import { Upload, CheckCircle } from "lucide-react";
 
-export default function UploadDocs({ userId }) {
+export default function NationalIDUpload() {
   const [file, setFile] = useState(null);
-  async function upload(type) {
-    if (!file) return alert('choose file');
-    const fd = new FormData();
-    fd.append('file', file);
-    fd.append('userId', userId);
-    const res = await axios.post(`/api/upload/${type}`, fd);
-    if (res.data.ok) alert('Uploaded');
-  }
+
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
 
   return (
-    <div>
-      <input type="file" onChange={e=>setFile(e.target.files[0])} />
-      <div className="space-x-2">
-        <button onClick={()=>upload('id')}>National ID</button>
-        <button onClick={()=>upload('kebele')}>Kebele ID</button>
-        <button onClick={()=>upload('selfie')}>Selfie</button>
+    <div className="min-h-screen bg-gray-50 flex justify-center p-6">
+      <div className="w-full max-w-2xl bg-white shadow-md rounded-xl p-8">
+
+        {/* Top Step Indicator */}
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 flex items-center justify-center rounded-full bg-blue-600 text-white font-semibold">
+              1
+            </div>
+            <span className="text-gray-700 font-medium">National ID</span>
+          </div>
+
+          <div className="text-sm text-gray-500">Step 1 of 3</div>
+        </div>
+
+        {/* Title */}
+        <h2 className="text-xl font-semibold text-gray-900 mb-2 text-center">
+          Upload Your National ID
+        </h2>
+
+        <p className="text-gray-600 text-center mb-6">
+          Please upload a clear photo of your government-issued National ID.
+          Make sure all information is readable.
+        </p>
+
+        {/* Upload Box */}
+        <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center">
+          <Upload className="mx-auto text-gray-400 mb-3" size={32} />
+
+          <p className="text-gray-600 mb-2">Drag and drop your file here</p>
+          <p className="text-gray-400 mb-4">or</p>
+
+          <label className="bg-blue-600 text-white px-4 py-2 rounded-lg cursor-pointer hover:bg-blue-700">
+            Choose File
+            <input type="file" className="hidden" onChange={handleFileChange} />
+          </label>
+
+          <p className="text-gray-400 text-sm mt-4">
+            Supported formats: JPG, PNG, PDF — Max size 10MB
+          </p>
+        </div>
+
+        {/* Tips Box */}
+        <div className="mt-6 bg-blue-50 p-4 rounded-lg">
+          <h4 className="font-semibold text-blue-700 mb-2">Tips for a good photo</h4>
+          <ul className="space-y-1 text-sm text-blue-900">
+            <li className="flex items-center gap-2">
+              <CheckCircle size={16} className="text-green-600" /> Ensure the whole document is visible
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle size={16} className="text-green-600" /> Avoid glare and reflections
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle size={16} className="text-green-600" /> Take photos in good lighting
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle size={16} className="text-green-600" /> Make sure the text is readable
+            </li>
+          </ul>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex justify-between mt-8">
+          <button className="text-gray-600 hover:underline">Back</button>
+
+          <button
+            disabled={!file}
+            className={`px-6 py-2 rounded-lg text-white 
+            ${file ? "bg-blue-600 hover:bg-blue-700" : "bg-gray-300 cursor-not-allowed"}`}
+          >
+            Continue
+          </button>
+        </div>
       </div>
     </div>
   );

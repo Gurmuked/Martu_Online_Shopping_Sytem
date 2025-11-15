@@ -1,5 +1,4 @@
 import Sidebar from "../components/buyers/Sidebar";
-import Topbar from "../components/buyers/Topbar";
 import StatCard from "../components/buyers/StatCard";
 import OrderList from "../components/buyers/OrderList";
 import RecommendedProducts from "../components/buyers/RecommendedProducts";
@@ -33,7 +32,8 @@ const BuyerDashboard = () => {
     <div className="flex min-h-screen bg-gray-100">
       <Sidebar />
       <main className="flex-1">
-        <Topbar />
+        <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
+        
         <div className="p-6 space-y-6">
           <div className="grid grid-cols-4 gap-4">
             {stats.map((s) => (
