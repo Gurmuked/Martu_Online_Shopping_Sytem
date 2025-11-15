@@ -3,6 +3,7 @@ import { GiShoppingCart } from "react-icons/gi";
 import { FaRegCreditCard } from "react-icons/fa";
 import { IoIosSettings, IoIosLogOut } from "react-icons/io";
 import { MdOutlineStarBorderPurple500 } from "react-icons/md";
+import {CreditCard, User} from 'lucide-react';
 
 
 const Sidebar = () => {
@@ -11,6 +12,8 @@ const Sidebar = () => {
     { name: "Browse Products", icon: <GiShoppingCart size={18} />, link: "/products" },
     { name: "My Orders", icon: <FaRegCreditCard size={18} />, link: "/orders" },
     { name: "Reviews", icon: <MdOutlineStarBorderPurple500 size={18} />, link: "/reviews" },
+    { name: "Transactions", icon: <CreditCard size={18} />, path: "/seller/transactions" },
+    { name: "Profile", icon: <User size={18} />, path: "/seller/profile" },
     { name: "Settings", icon: <IoIosSettings size={18} />, link: "/settings" },
   ];
 

@@ -3,7 +3,6 @@ import {
   Package,
   PlusCircle,
   ShoppingCart,
-  BarChart2,
   CreditCard,
   User,
   Settings,
@@ -17,7 +16,6 @@ const SellerSidebar = () => {
     { name: "Add Product", icon: <PlusCircle size={18} />, path: "/seller/add-product" },
     { name: "Orders", icon: <ShoppingCart size={18} />, path: "/seller/orders" },
     { name: "Transactions", icon: <CreditCard size={18} />, path: "/seller/transactions" },
-    { name: "Analytics", icon: <BarChart2 size={18} />, path: "/seller/analytics" },
     { name: "Profile", icon: <User size={18} />, path: "/seller/profile" },
     { name: "Settings", icon: <Settings size={18} />, path: "/seller/settings" },
   ];

@@ -16,9 +16,9 @@ export default function UploadDocs({ userId }) {
     <div>
       <input type="file" onChange={e=>setFile(e.target.files[0])} />
       <div className="space-x-2">
-        <button onClick={()=>upload('id')}>Upload ID</button>
-        <button onClick={()=>upload('kebele')}>Upload Kebele</button>
-        <button onClick={()=>upload('selfie')}>Upload Selfie</button>
+        <button onClick={()=>upload('id')}>National ID</button>
+        <button onClick={()=>upload('kebele')}>Kebele ID</button>
+        <button onClick={()=>upload('selfie')}>Selfie</button>
       </div>
     </div>
   );

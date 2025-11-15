@@ -1,12 +1,10 @@
 import { CiSquarePlus } from "react-icons/ci";
-import { BsBarChartLine } from "react-icons/bs";
 import { GiBanknote } from "react-icons/gi";
 import { FaUser } from "react-icons/fa";
 
 export default function QuickActions() {
   const actions = [
     { icon: CiSquarePlus, label: "Add Product", color: "bg-green-100 text-green-600" },
-    { icon: BsBarChartLine, label: "View Analytics", color: "bg-blue-100 text-blue-600" },
     { icon: GiBanknote, label: "Withdraw Funds", color: "bg-orange-100 text-orange-600" },
     { icon: FaUser, label: "Update Profile", color: "bg-purple-100 text-purple-600" },
   ];
