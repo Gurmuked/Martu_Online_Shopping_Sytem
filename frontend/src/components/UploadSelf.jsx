@@ -30,7 +30,7 @@ export default function SelfieCapture() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex justify-center p-6">
-      <div className="w-full max-w-2xl bg-white shadow-md rounded-xl p-8">
+      <div className="w-full max-w-3xl bg-white shadow-lg rounded-xl p-8">
 
                 {/* Top Step Indicator */}
         <div className="flex items-center justify-between mb-6">
@@ -43,7 +43,7 @@ export default function SelfieCapture() {
 
           <div className="text-sm text-gray-500">Step 3 of 3</div>
         </div>
-        
+
                 {/* Progress header */}
         <div className="mb-6">
           <div className="flex justify-between text-sm text-gray-600 mb-1">
