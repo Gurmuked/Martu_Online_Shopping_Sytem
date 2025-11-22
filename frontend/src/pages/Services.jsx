@@ -1,7 +1,7 @@
 import { Upload } from 'lucide-react';
-import UploadDocs from '../components/UploadDocs.jsx'
-import UploadKeb from '../components/UploadKeb.jsx'
-import UploadSelf from '../components/UploadSelf.jsx'
+import UploadDocs from '../components/Verification/UploadDocs.jsx'
+import UploadKeb from '../components/Verification/UploadKeb.jsx'
+import UploadSelf from '../components/Verification/UploadSelf.jsx'
 
 const Services = () => {
   return (

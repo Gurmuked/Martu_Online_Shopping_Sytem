@@ -10,19 +10,19 @@ const Navbar = () => {
       </div>
 
       <ul className="hidden md:flex space-x-4 text-gray-700 font-medium">
-        <li><Link to="/" className="hover:text-green-700 active:text-green-900">Home</Link></li>
+        <li><Link to="/home" className="hover:text-green-700 active:text-green-900">Home</Link></li>
         <li><Link to="/services" className="hover:text-green-700 active:text-green-900">Services</Link></li>
         <li><Link to="/features" className="hover:text-green-700 active:text-green-900">Feature</Link></li>
         <li><Link to="/about" className="hover:text-green-700 active:text-green-900">About</Link></li>
       </ul>
 
       <div className="space-x-2">
-        <Link to ="/loginregister">
+        <Link to ="/login">
         <button className="border border-green-600 text-green-700 px-3 py-1 rounded-lg hover:bg-green-700 hover:text-white">
           Sign In
         </button>
         </Link>
-        <Link to ="/loginregister">
+        <Link to ="/Register">
         <button className="bg-green-600 text-white px-3 py-1 rounded-lg hover:bg-green-800">
           Get Started
         </button>

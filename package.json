@@ -4,8 +4,7 @@
   "description": "🛍️ E-Commerce Website (HTML, CSS, JS + Basic Backend)\r A functional and responsive e-commerce website built using HTML, CSS, and JavaScript, with basic backend features like user registration, login, contact form handling, and subscription — perfect for learning full-stack fundamentals.",
   "main": "index.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "dev": "node --watch backend/server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -14,19 +13,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
+  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/Gurmuked/Web-mini-project/issues"
   },
-  "homepage": "https://github.com/Gurmuked/Web-mini-project#readme",
-  "dependencies": {
-    "cloudinary": "^1.41.3",
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
-    "express": "^5.1.0",
-    "mongoose": "^8.19.2",
-    "multer": "^2.0.2",
-    "multer-storage-cloudinary": "^4.0.0",
-    "twilio": "^5.10.4"
-  }
+  "homepage": "https://github.com/Gurmuked/Web-mini-project#readme"
 }
