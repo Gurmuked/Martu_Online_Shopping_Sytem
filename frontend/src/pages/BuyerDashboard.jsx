@@ -29,10 +29,10 @@ const BuyerDashboard = () => {
   ];
 
   return (
-    <div className="flex min-h-screen bg-gray-100">
+    <div className="flex min-h-screen bg-gray-100 py-16">
       <Sidebar />
-      <main className="flex-1">
-        <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
+      <main className="flex-1  ml-[290px]">
+        <h1 className="text-2xl font-bold mb-2 pt-4 pl-8">Trader Dashboard</h1>
         
         <div className="p-6 space-y-6">
           <div className="grid grid-cols-4 gap-4">

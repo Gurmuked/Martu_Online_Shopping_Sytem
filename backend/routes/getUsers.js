@@ -1,10 +1,11 @@
 import express from "express";
 import User from "../models/Users.js"; // Make sure path is correct
+import protect from "../middleware/auth.js";
 
 const router = express.Router();
 
 // GET all users
-router.get("/users", async (req, res) => {
+router.get("/", protect, async (req, res) => {
   try {
     const users = await User.find(); // Fetch all users from DB
     res.status(200).json(users);

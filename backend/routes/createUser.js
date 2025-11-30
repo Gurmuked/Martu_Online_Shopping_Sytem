@@ -1,4 +1,6 @@
 import express from "express";
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 import User from "../models/Users.js";
 
 
@@ -25,17 +27,24 @@ router.post("/register", async (req, res) => {
       return res.status(400).json({ message: "Email already registered!" });
     }
 
+    // Hash password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
     // Create user
     const newUser = new User({
       username,
       email,
-      password,
+      password: hashedPassword,
       user_type,
     });
 
     await newUser.save();
 
-    res.status(201).json({ message: "Registration successful!" });
+    // Sign a JWT
+    const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
+
+    res.status(201).json({ message: "Registration successful!", token, user: { username: newUser.username, email: newUser.email, user_type: newUser.user_type } });
 
   } catch (error) {
     console.log(error);
