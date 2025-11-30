@@ -1,31 +1,60 @@
 import React, { useState } from "react";
-import { FaLock } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import { FaLock, FaUser } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
-  const [loginEmail, setLoginEmail] = useState("");
+  const [loginUsername, setLoginUsername] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState(null);
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setMessage('Logging in...');
+    // preserve current inputs so we can clear them immediately
+    const usernameToSend = loginUsername;
+    const passwordToSend = loginPassword;
+    setLoginUsername("");
+    setLoginPassword("");
     try {
       const res = await fetch("http://localhost:5000/api/users/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: loginEmail, password: loginPassword }),
+        body: JSON.stringify({ username: usernameToSend, password: passwordToSend }),
       });
       const data = await res.json();
-      alert(data.message);
+      setMessage(data.message);
       if (res.ok) {
-        localStorage.setItem("user", JSON.stringify(data.user));
-        setLoginEmail("");
+        // Save token and user to localStorage
+        if (data.token) {
+          localStorage.setItem('token', data.token);
+        }
+        if (data.user) {
+          localStorage.setItem("user", JSON.stringify(data.user));
+        }
+        // already cleared, but ensure blank
+        setLoginUsername("");
         setLoginPassword("");
-        navigate("/dashboard"); // redirect after login
+        // redirect after login depending on user type
+        let userType = data.user?.user_type || '';
+        userType = userType.toLowerCase();
+        if (userType === 'farmer') {
+          navigate('/seller-dashboard');
+         } 
+         else if(userType === 'trader') {
+          navigate('/buyer-dashboard');
+        } 
+        else{
+          navigate('/admin-dashboard');
+        }
       }
+      setLoading(false);
     } catch (err) {
       console.error(err);
+      setMessage('Login failed. Try again.');
+      setLoading(false);
     }
   };
 
@@ -38,13 +67,13 @@ const Login = () => {
           <div className="relative w-full h-[50px] mb-4">
             <input
               type="text"
-              placeholder="Email"
+              placeholder="Username"
               required
-              value={loginEmail}
-              onChange={(e) => setLoginEmail(e.target.value)}
+              value={loginUsername}
+              onChange={(e) => setLoginUsername(e.target.value)}
               className="w-full h-full bg-transparent outline-none border-2 border-white/20 rounded-full px-5 pr-11 text-white placeholder-white text-base"
             />
-            <MdEmail className="absolute right-5 top-1/2 -translate-y-1/2 text-lg" />
+              <FaUser className="absolute right-5 top-1/2 -translate-y-1/2 text-lg" />
           </div>
 
           <div className="relative w-full h-[50px] mb-4">
@@ -66,8 +95,11 @@ const Login = () => {
             <a href="#" className="hover:underline">Forgot Password?</a>
           </div>
 
-          <button type="submit" className="w-full h-[40px] bg-white text-black font-bold rounded-full shadow-md hover:bg-gray-200 transition">
-            Login
+          {message && (
+            <p className="text-center text-sm mb-2">{message}</p>
+          )}
+          <button type="submit" disabled={loading} className={`w-full h-[40px] bg-white text-black font-bold rounded-full shadow-md hover:bg-gray-200 transition ${loading ? 'opacity-60' : ''}`}>
+            {loading ? 'Logging in...' : 'Login'}
           </button>
 
           <div className="text-sm text-center mt-4">

@@ -1,30 +1,38 @@
 import express from "express";
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 import User from "../models/Users.js"; 
 
-// LOGIN API
+const router = express.Router();
+
+// LOGIN API - now accepts username and password
 router.post("/login", async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { username, password } = req.body;
 
     // Check empty inputs
-    if (!email || !password) {
-      return res.status(400).json({ message: "Email and password required!" });
+    if (!username || !password) {
+      return res.status(400).json({ message: "Username and password required!" });
     }
 
-    // Check user exists
-    const user = await User.findOne({ email });
+    // Check user exists by username
+    const user = await User.findOne({ username });
     if (!user) {
       return res.status(400).json({ message: "User not found! Please register." });
     }
 
-    // Check password (plain text version)
-    if (user.password !== password) {
+    // Check password (bcrypt)
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
       return res.status(400).json({ message: "Incorrect password!" });
     }
 
-    // Success
+    // Issue JWT on success
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
+
     res.status(200).json({
       message: "Login successful!",
+      token,
       user: {
         username: user.username,
         email: user.email,
@@ -37,3 +45,5 @@ router.post("/login", async (req, res) => {
     res.status(500).json({ message: "Server error!" });
   }
 });
+
+export default router;
