@@ -8,7 +8,7 @@ import {CreditCard, User} from 'lucide-react';
 
 const Sidebar = () => {
   const menu = [
-    { name: "Dashboard", icon: <CiHome size={18} />, link: "/dashboard" },
+    { name: "Dashboard", icon: <CiHome size={18} />, link: "/buyer-dashboard" },
     { name: "Browse Products", icon: <GiShoppingCart size={18} />, link: "/products" },
     { name: "My Orders", icon: <FaRegCreditCard size={18} />, link: "/orders" },
     { name: "Reviews", icon: <MdOutlineStarBorderPurple500 size={18} />, link: "/reviews" },
@@ -18,7 +18,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="w-72 bg-white border-r border-gray-200 min-h-screen p-5 flex flex-col">
+    <aside className="w-72 bg-white border-r border-gray-200 h-[90vh] p-5 flex flex-col fixed">
         <div className="mb-6 flex items-center gap-3">
           <div className="w-10 h-10 rounded-lg bg-green-700 flex items-center justify-center text-white font-bold">
             AG

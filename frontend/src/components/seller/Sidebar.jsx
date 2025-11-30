@@ -11,7 +11,7 @@ import {
 
 const SellerSidebar = () => {
   const menu = [
-    { name: "Dashboard", icon: <LayoutDashboard size={18} />, path: "/seller/dashboard" },
+    { name: "Dashboard", icon: <LayoutDashboard size={18} />, path: "/seller-dashboard" },
     { name: "Manage Products", icon: <Package size={18} />, path: "/seller/products" },
     { name: "Add Product", icon: <PlusCircle size={18} />, path: "/seller/add-product" },
     { name: "Orders", icon: <ShoppingCart size={18} />, path: "/seller/orders" },
@@ -21,7 +21,7 @@ const SellerSidebar = () => {
   ];
 
   return (
-    <aside className="w-72 bg-white border-r border-gray-200 min-h-screen p-5 flex flex-col">
+    <aside className="w-72 bg-white border-r border-gray-200 h-[90vh] p-5 flex flex-col fixed">
       <div className="mb-6 flex items-center gap-3">
         <div className="w-10 h-10 rounded-lg bg-green-700 flex items-center justify-center text-white font-bold">
           AG

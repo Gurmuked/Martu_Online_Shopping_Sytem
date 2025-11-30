@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center px-8 py-3 bg-white shadow-sm fixed w-full top-0 z-50">
+    <nav className="flex justify-between items-center px-8 py-4 bg-white shadow-sm fixed w-full top-0 z-50">
       <div className="flex items-center space-x-2">
         <img src=".././src/assets/logo.jpg" alt="AgroLink" className="h-8 rounded-full bg-gray-500" />
         <span className="text-green-700 font-bold text-[18px]">AgroLink Ethiopia</span>
